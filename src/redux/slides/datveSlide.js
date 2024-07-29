@@ -2,7 +2,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  danhSachGheDangDat: []
+  danhSachGheDangDat: [],
+  tongTien: 0
 };
 
 const datveSlice = createSlice({
@@ -13,14 +14,21 @@ const datveSlice = createSlice({
       const ghe = action.payload;
       const index = state.danhSachGheDangDat.findIndex(gheDangDat => gheDangDat.soGhe === ghe.soGhe);
       if (index !== -1) {
-        state.danhSachGheDangDat.splice(index, 1); 
+        state.danhSachGheDangDat.splice(index, 1);
+        state.tongTien -= ghe.gia;
       } else {
-        state.danhSachGheDangDat.push(ghe); 
+        state.danhSachGheDangDat.push(ghe);
+        state.tongTien += ghe.gia;
       }
     },
     cancelSeat: (state, action) => {
       const soGhe = action.payload;
-      state.danhSachGheDangDat = state.danhSachGheDangDat.filter(gheDangDat => gheDangDat.soGhe !== soGhe);
+      const ghe = state.danhSachGheDangDat.find(gheDangDat => gheDangDat.soGhe === soGhe);
+
+      if (ghe) {
+        state.danhSachGheDangDat = state.danhSachGheDangDat.filter(gheDangDat => gheDangDat.soGhe !== soGhe);
+        state.tongTien -= ghe.gia; 
+      }
     }
   }
 });

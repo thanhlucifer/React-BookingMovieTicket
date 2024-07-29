@@ -1,10 +1,12 @@
 import SeatRow from './SeatRow'
 import './style.scss'
 import data from '../data/danhSachGhe.json'
+import SeatInfo from './SeatInfo'
 const MainDatVe = () => {
   return (
     <div className='bookingMovie'>
-      <div className='gird '>
+      <div className='overlay'></div>
+      <div className='content'>
         <div className='grid grid-cols-12 gap-4'>
           <div className='col-span-8'>
             <h1 className="text-center text-yellow-500 text-3xl">Đặt vé xem phim CYBERLEARN.VN</h1>
@@ -27,10 +29,7 @@ const MainDatVe = () => {
                 }
               })}
             </div>
-
-
-
-           </div>
+          </div>
           <div className='col-span-4'>
             <h1 className="text-3xl text-white">DANH SÁCH GHẾ BẠN CHỌN</h1>
             <ul className='mt-3'>
@@ -47,8 +46,9 @@ const MainDatVe = () => {
                 <span>Ghế chưa đặt</span>
               </li>
             </ul>
-
-
+            <div className='mt-3'>
+             <SeatInfo />
+            </div>
           </div>
         </div>
       </div>

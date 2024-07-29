@@ -11,6 +11,24 @@
     @apply text-center p-10;
     height: 100%;
     width: 100%;
+    position: relative;
+}
+
+.overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.781); // Adjust the color and opacity as needed
+    pointer-events: none; // This ensures the overlay doesn't block interactions with elements underneath
+    @apply z-0
+}
+
+.content {
+    position: relative;
+    z-index: 1;
 }
 
 
