@@ -9,7 +9,7 @@ const MainDatVe = () => {
       <div className='content'>
         <div className='grid grid-cols-12 gap-4'>
           <div className='col-span-8'>
-            <h1 className="text-center text-yellow-500 text-3xl">Đặt vé xem phim CYBERLEARN.VN</h1>
+            <h1 className="text-center text-yellow-500 text-3xl">Đặt vé xem phim THANHLUCIFER</h1>
             <h1 className="text-center text-xl text-white">Màn hình </h1>
             <div className='screen mt-3'></div>
             <div>
